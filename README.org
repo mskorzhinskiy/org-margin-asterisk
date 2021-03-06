@@ -52,6 +52,10 @@ Notice that first several headline levels are exactly on the same line.
 
 [[file:style_2.png]]
 
+Moving things around also works wonderful:
+
+[[file:style_2_moving.gif]]
+
 #+begin_src elisp
 (use-package org-superstar
   :hook (org-mode . org-superstar-mode)
