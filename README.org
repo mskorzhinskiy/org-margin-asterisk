@@ -1,0 +1,71 @@
+#+TITLE: Draw org-mode bullets on margin
+
+This is a simple function that substitues ~org-indent--compute-prefixes~ function
+  from the ~org-indent~ pacakge. Paired with ~org-hide-leading-stars~ configuration
+  variable or properly configued [[https://github.com/integral-dw/org-superstar-mode][org-superstar-mode]] package, can produce wery
+  nice-looking headlines.
+
+* Install
+
+#+begin_src elisp
+(use-package org-margin-bullet
+  :config (org-margin-bullet-load))
+#+end_src
+
+** Doom emacs
+
+Package recipe:
+
+#+begin_src elisp
+(package! org-margin-bullet
+  :recipe (:repo "mskorzhinskiy/org-margin-bullet"
+           :host github :branch "main"))
+#+end_src
+
+* Usage and example configuration
+
+** Style 1
+
+[[file:style_1.png]]
+
+#+begin_src elisp
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode)
+  :config
+  (setq org-superstar-headline-bullets-list '(("  " . "x")))
+  (setq org-superstar-leading-bullet " ")
+  (setq org-hide-leading-stars nil)
+  (setq org-superstar-special-todo-items t)
+  (setq org-superstar-todo-bullet-alist
+        '(("TODO" "☐ ")
+          ("NEXT" "☐ ")
+          ("DONE" "☑ "))))
+
+(set-ligatures! 'org-mode
+    :alist '(("TODO " . "")
+             ("DONE " . "")))
+#+end_src
+
+** Style 2
+
+Notice that first several headline levels are exatly on the same line.
+
+[[file:style_2.png]]
+
+#+begin_src elisp
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode)
+  :config
+  (setq org-superstar-headline-bullets-list '(("  " . "x")))
+  (setq org-superstar-leading-bullet "")
+  (setq org-hide-leading-stars nil)
+  (setq org-superstar-special-todo-items t)
+  (setq org-superstar-todo-bullet-alist
+        '(("TODO" "☐ ")
+          ("NEXT" "☐ ")
+          ("DONE" "☑ "))))
+
+(set-ligatures! 'org-mode
+    :alist '(("TODO " . "")
+             ("DONE " . "")))
+#+end_src
