@@ -1,8 +1,8 @@
 #+TITLE: Draw org-mode bullets on margin
 
-This is a simple function that substitues ~org-indent--compute-prefixes~ function
-  from the ~org-indent~ pacakge. Paired with ~org-hide-leading-stars~ configuration
-  variable or properly configued [[https://github.com/integral-dw/org-superstar-mode][org-superstar-mode]] package, can produce wery
+This is a simple function that substitutes ~org-indent--compute-prefixes~ function
+  from the ~org-indent~ package. Paired with ~org-hide-leading-stars~ configuration
+  variable or properly configured [[https://github.com/integral-dw/org-superstar-mode][org-superstar-mode]] package, can produce really
   nice-looking headlines.
 
 * Install
@@ -48,7 +48,7 @@ Package recipe:
 
 ** Style 2
 
-Notice that first several headline levels are exatly on the same line.
+Notice that first several headline levels are exactly on the same line.
 
 [[file:style_2.png]]
 
